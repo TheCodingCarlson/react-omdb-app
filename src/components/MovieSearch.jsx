@@ -1,5 +1,4 @@
-const React = require('react');
-const Link = require('react-router').Link;
+import React from 'react';
 
 class MovieSearch extends React.Component {
     render() {
@@ -11,4 +10,4 @@ class MovieSearch extends React.Component {
     };
 }
 
-module.exports = MovieSearch;
+export default MovieSearch;
