@@ -3,6 +3,8 @@ var webpack = require('webpack');
 var path = require('path');
 var DIST_DIR   = path.join(__dirname, 'dist'),  
     CLIENT_DIR = path.join(__dirname, 'src'); 
+
+const Dotenv = require('dotenv-webpack');
  
 module.exports = {
     context: CLIENT_DIR,
@@ -14,13 +16,19 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /.jsx?$/,
+                test: /\.jsx?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2016', 'react']
+                    presets: ['es2017', 'react'],
+                    plugins: ['transform-class-properties']
                 }
             }
         ]
     },
+    plugins: [
+        new Dotenv({
+            path: './.env'
+        })
+    ]
 };
