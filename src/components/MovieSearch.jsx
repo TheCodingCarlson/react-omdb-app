@@ -28,28 +28,44 @@ class MovieSearch extends React.Component {
         const results = this.state.results !== undefined ?
             this.state.results.map((movie, id) => {
                 return (
-                    <div key={id}>
-                        <h2><Link to={`/results/${movie.imdbID}`}>{movie.Title}</Link></h2>
+                    <div className='col s12 m6' key={id}>
+                        <div className='card blue-grey darken-1'>    
+                            <div className='card-content white-text'>
+                                <span className='card-title'>{movie.Title}</span>
+                                <p>{movie.Year}</p>
+                            </div>
+                            <div className='card-action'>
+                                <Link to={`/results/${movie.imdbID}`}>Details</Link>
+                            </div>
+                        </div>
                     </div>
                 );
             }) : 
             
-            <div>
-                <h2>Sorry! there were no movies matching that query!</h2>
+            <div className='row'>
+                <div className="col s6 offset-s3">
+                    <h4>Sorry! there were no movies matching that query!</h4>
+                </div>
             </div>;
      
         return (
             <div>
-                <h1>Search for movies</h1>
-                <form onSubmit={this.search}>
-                    <input type='text'
-                        value={this.state.searchTerm}
-                        onChange={this.searchChange} />
-
-                    <input type='submit' />
-                </form>
-                <button onClick={this.clear}>Clear</button>
-                <div>{ results }</div>
+                <div className='row'>
+                    <div className="col s6 offset-s3">
+                        <form onSubmit={this.search}>
+                            <input value={this.state.searchTerm} onChange={this.searchChange} placeholder="Movie Title" /> 
+                            <button className="waves-effect waves-light btn" type='submit'>
+                                <i class="material-icons">search</i>
+                            </button>
+                            <button className="waves-effect waves-light btn" type='button' onClick={this.clear}>
+                                <i class="material-icons">clear</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div className='row'>
+                    {results}
+                </div>
             </div>
         )
     }

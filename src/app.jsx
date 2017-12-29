@@ -15,13 +15,6 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                    </ul>
-
-                    <hr />
-
                     <Route exact path='/' component={MovieSearch} />
                     <Route path='/about' component={About} />
                     <Route path='/results/:id' component={MovieDetails} />
