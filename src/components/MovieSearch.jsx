@@ -7,6 +7,7 @@ class MovieSearch extends React.Component {
         results: []
     });
     state = MovieSearch.intialState();
+
     searchChange = (e) => this.setState({ searchTerm: e.target.value })
     clear = () => this.setState(MovieSearch.intialState());
     
@@ -28,7 +29,7 @@ class MovieSearch extends React.Component {
             this.state.results.map((movie, id) => {
                 return (
                     <div key={id}>
-                        <h2><Link to={`/results/${movie.imdbID}&apikey=c555a4b5`}>{movie.Title}</Link></h2>
+                        <h2><Link to={`/results/${movie.imdbID}`}>{movie.Title}</Link></h2>
                     </div>
                 );
             }) : 

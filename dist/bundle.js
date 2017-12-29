@@ -2384,7 +2384,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_MovieSearch_jsx__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_About_jsx__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_MovieDetails_jsx__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_About_jsx__ = __webpack_require__(76);
 // React Dependencies
 
 
@@ -2393,6 +2394,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // Components
+
 
 
 
@@ -2428,7 +2430,8 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_MovieSearch_jsx__["a" /* default */] }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/about', component: __WEBPACK_IMPORTED_MODULE_4__components_About_jsx__["a" /* default */] })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/about', component: __WEBPACK_IMPORTED_MODULE_5__components_About_jsx__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/results/:id', component: __WEBPACK_IMPORTED_MODULE_4__components_MovieDetails_jsx__["a" /* default */] })
             )
         );
     }
@@ -23409,7 +23412,7 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
                     null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                        { to: `/results/${movie.imdbID}&apikey=c555a4b5` },
+                        { to: `/results/${movie.imdbID}` },
                         movie.Title
                     )
                 )
@@ -23490,6 +23493,70 @@ class About extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (About);
+
+/***/ }),
+/* 77 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(27);
+
+
+
+class MovieDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+    constructor(...args) {
+        var _temp;
+
+        return _temp = super(...args), this.state = MovieDetails.initialState(), _temp;
+    }
+
+    componentDidMount() {
+        fetch(`http://omdbapi.com/?i=${this.props.match.params.id}&apikey=${"c555a4b5"}`).then(res => {
+            res.json().then(data => {
+                this.setState({ movie: data });
+            });
+        }).catch(err => {
+            this.setState({ movie: null });
+        });
+    }
+
+    render() {
+        const movie = this.state.movie;
+        if (!movie) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h1',
+            null,
+            '...Loading'
+        );
+
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'h1',
+                null,
+                movie.Title
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'p',
+                null,
+                movie.Plot
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                { to: '/' },
+                '\u2190 Back'
+            )
+        );
+    }
+}
+
+MovieDetails.initialState = () => ({
+    movie: null
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (MovieDetails);
 
 /***/ })
 /******/ ]);

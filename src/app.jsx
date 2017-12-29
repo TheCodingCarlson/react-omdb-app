@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 // Components
 import MovieSearch from './components/MovieSearch.jsx'
+import MovieDetails from './components/MovieDetails.jsx'
 import About from './components/About.jsx'
 
 class App extends React.Component {
@@ -23,6 +24,7 @@ class App extends React.Component {
 
                     <Route exact path='/' component={MovieSearch} />
                     <Route path='/about' component={About} />
+                    <Route path='/results/:id' component={MovieDetails} />
                 </div>
             </Router>
         )
