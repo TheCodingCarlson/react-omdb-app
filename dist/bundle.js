@@ -23386,7 +23386,7 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
     constructor(...args) {
         var _temp;
 
-        return _temp = super(...args), this.state = MovieSearch.intialState(), this.searchChange = e => this.setState({ searchTerm: e.target.value }), this.search = e => {
+        return _temp = super(...args), this.state = MovieSearch.intialState(), this.searchChange = e => this.setState({ searchTerm: e.target.value }), this.clear = () => this.setState(MovieSearch.intialState()), this.search = e => {
             e.preventDefault();
 
             fetch(`http://omdbapi.com/?s=${this.state.searchTerm}&apikey=${"c555a4b5"}`).then(res => {
@@ -23394,7 +23394,7 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
                     this.setState({ searchTerm: '', results: data.Search });
                 });
             }).catch(err => {
-                this.setState({ searcTerm: '', results: null });
+                this.setState({ searcTerm: '', results: [] });
             });
         }, _temp;
     }
@@ -23439,6 +23439,11 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
                     value: this.state.searchTerm,
                     onChange: this.searchChange }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                { onClick: this.clear },
+                'Clear'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',

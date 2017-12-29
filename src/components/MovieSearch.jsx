@@ -6,10 +6,9 @@ class MovieSearch extends React.Component {
         searchTerm: '',
         results: []
     });
-
     state = MovieSearch.intialState();
-
     searchChange = (e) => this.setState({ searchTerm: e.target.value })
+    clear = () => this.setState(MovieSearch.intialState());
     
     search = (e) => {
         e.preventDefault();
@@ -20,7 +19,7 @@ class MovieSearch extends React.Component {
                 this.setState({ searchTerm: '', results: data.Search });
             });
         }).catch(err => {
-            this.setState({ searcTerm: '', results: null });
+            this.setState({ searcTerm: '', results: [] });
         });
     }
 
@@ -48,6 +47,7 @@ class MovieSearch extends React.Component {
 
                     <input type='submit' />
                 </form>
+                <button onClick={this.clear}>Clear</button>
                 <div>{ results }</div>
             </div>
         )
