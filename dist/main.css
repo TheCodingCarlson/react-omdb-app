@@ -1,6 +1,44 @@
-html {
-  background: url("https://c1.staticflickr.com/7/6054/6299172969_dcbf87e9be_b.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+@import url(https://fonts.googleapis.com/css?family=Carrois+Gothic+SC|Didact+Gothic);html {
+  background-color: #000000; }
+
+body {
+  font-family: "Didact Gothic", sans-serif; }
+
+.container {
+  max-width: 768px; }
+
+.red-text {
+  color: #b71c1c; }
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: #ffffff; }
+
+h1 {
+  font-family: "Carrois Gothic SC", sans-serif; }
+
+input:not([type]) {
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff; }
+  input:not([type]):focus {
+    border-bottom: 1px solid #b71c1c !important;
+    box-shadow: 0 1px 0 0 #b71c1c !important; }
+
+button {
+  margin-left: 12px; }
+
+.card-action {
+  border-top: 1px solid #ffffff !important; }
+
+.collection .collection-item {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff; }
+
+.back-link {
+  color: #b71c1c;
+  transition: color 0.5s ease; }
+  .back-link:hover {
+    color: #ffffff; }

@@ -1,11 +1,73 @@
-@mixin cover-background($img-uri, $background-top:"center", $background-left:"center", $background-attachment:"fixed") {
-    background: url($img-uri) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment); 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;  
-}
+@import url(https://fonts.googleapis.com/css?family=Carrois+Gothic+SC|Didact+Gothic);
+
+$black: #000000;
+$white: #ffffff;
+$red: #b71c1c;
+
+$spacing-size-1: 12px;
+$spacing-size-2: 24px;
+
+$carrois-gothic: 'Carrois Gothic SC', sans-serif;
+$didact-gothic: 'Didact Gothic', sans-serif;
 
 html {
-    @include cover-background('https://c1.staticflickr.com/7/6054/6299172969_dcbf87e9be_b.jpg');
+    background-color: $black;
+}
+
+body {
+    font-family: $didact-gothic;
+}
+
+.container {
+    max-width: 768px;
+}
+
+.red-text {
+    color: $red;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    color: $white;
+}
+
+h1 {
+    font-family: $carrois-gothic;
+}
+
+input:not([type]) {
+    border-bottom: 1px solid $white;
+    color: $white;
+
+    &:focus {
+        border-bottom: 1px solid $red !important;
+        box-shadow: 0 1px 0 0 $red !important;
+    }
+}
+
+button {
+    margin-left: $spacing-size-1;
+}
+
+.card-action {
+    border-top: 1px solid $white !important;
+}
+
+.collection {
+    .collection-item {
+        background-color: rgba(255,255,255,0.25);
+        color: $white;
+    }
+}
+
+.back-link {
+    color: $red;
+    transition: color 0.5s ease;
+
+    &:hover {
+        color: $white;
+    }
 }

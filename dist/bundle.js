@@ -23391,10 +23391,10 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
         const results = this.state.results !== undefined ? this.state.results.map((movie, id) => {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'col s12 m6', key: id },
+                { className: 'col s12', key: id },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'card blue-grey darken-1' },
+                    { className: 'card red darken-4' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'card-content white-text' },
@@ -23425,11 +23425,11 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
             { className: 'row' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'col s6 offset-s3' },
+                { className: 'col s12' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'h4',
                     null,
-                    'Sorry! there were no movies matching that query!'
+                    'Sorry, there were no movies matching that query!'
                 )
             )
         );
@@ -23442,27 +23442,49 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
                 { className: 'row' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'col s6 offset-s3' },
+                    { className: 'col s12 center-align' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h1',
+                        null,
+                        'OMDB Movie Search'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        null,
+                        'Search the OMDB movie database for details on a specific movie or enter a general term to discover movies with that query in the title.'
+                    )
+                )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col s12' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'form',
                         { onSubmit: this.search },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { value: this.state.searchTerm, onChange: this.searchChange, placeholder: 'Movie Title' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { value: this.state.searchTerm, onChange: this.searchChange, placeholder: 'Movie Title: ex. Star Wars', required: true }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'button',
-                            { className: 'waves-effect waves-light btn', type: 'submit' },
+                            'div',
+                            { className: 'center-align' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'i',
-                                { 'class': 'material-icons' },
-                                'search'
-                            )
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'button',
-                            { className: 'waves-effect waves-light btn', type: 'button', onClick: this.clear },
+                                'button',
+                                { className: 'waves-effect waves-light btn red darken-4', type: 'submit' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'i',
+                                    { className: 'material-icons' },
+                                    'search'
+                                )
+                            ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'i',
-                                { 'class': 'material-icons' },
-                                'clear'
+                                'button',
+                                { className: 'waves-effect waves-light btn red darken-4', type: 'button', onClick: this.clear },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'i',
+                                    { className: 'material-icons' },
+                                    'clear'
+                                )
                             )
                         )
                     )
@@ -23519,24 +23541,147 @@ class MovieDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
             null,
             '...Loading'
         );
+        const scores = this.state.movie.Ratings.map((score, id) => {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'li',
+                { className: 'collection-item', key: id },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    { className: 'red-text' },
+                    score.Source,
+                    ':'
+                ),
+                ' ',
+                score.Value
+            );
+        });
 
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'h1',
-                null,
-                movie.Title
+                'div',
+                { className: 'row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col s12' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h1',
+                        null,
+                        movie.Title
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        null,
+                        movie.Plot
+                    )
+                )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'p',
-                null,
-                movie.Plot
+                'div',
+                { className: 'row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col s12 m6 center-align' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: movie.Poster, alt: movie.Title })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col s12 m6' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'ul',
+                        { className: 'collection' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'li',
+                            { className: 'collection-item' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'red-text' },
+                                'Released:'
+                            ),
+                            ' ',
+                            movie.Released
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'li',
+                            { className: 'collection-item' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'red-text' },
+                                'Genre:'
+                            ),
+                            ' ',
+                            movie.Genre
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'li',
+                            { className: 'collection-item' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'red-text' },
+                                'Rating:'
+                            ),
+                            ' ',
+                            movie.Rated
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'li',
+                            { className: 'collection-item' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'red-text' },
+                                'Length:'
+                            ),
+                            ' ',
+                            movie.Runtime
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'li',
+                            { className: 'collection-item' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'red-text' },
+                                'Director(s):'
+                            ),
+                            ' ',
+                            movie.Director
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'li',
+                            { className: 'collection-item' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'red-text' },
+                                'Actors:'
+                            ),
+                            ' ',
+                            movie.Actors
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        null,
+                        'Ratings'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'ul',
+                        { className: 'collection' },
+                        scores
+                    )
+                )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                { to: '/' },
-                '\u2190 Back'
+                'div',
+                { className: 'row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 's12 center-align' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                        { to: '/', className: 'back-link' },
+                        '\u2190 Back'
+                    )
+                )
             )
         );
     }
