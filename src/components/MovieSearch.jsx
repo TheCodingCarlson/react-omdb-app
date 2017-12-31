@@ -26,7 +26,7 @@ class MovieSearch extends React.Component {
             res.json().then(data => {
                 localStorage.setItem('searchTerm', this.state.searchTerm);
                 localStorage.setItem('results', JSON.stringify(data.Search));
-                this.setState({ searchTerm: '', results: data.Search });
+                this.setState({ results: data.Search });
             });
         }).catch(err => {
             this.setState({ searchTerm: '', results: [] });

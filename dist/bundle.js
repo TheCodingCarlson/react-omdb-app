@@ -23381,8 +23381,7 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
                 res.json().then(data => {
                     localStorage.setItem('searchTerm', this.state.searchTerm);
                     localStorage.setItem('results', JSON.stringify(data.Search));
-                    console.log(localStorage);
-                    this.setState({ searchTerm: '', results: data.Search });
+                    this.setState({ results: data.Search });
                 });
             }).catch(err => {
                 this.setState({ searchTerm: '', results: [] });
