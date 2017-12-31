@@ -5,8 +5,15 @@ class MovieSearch extends React.Component {
     static intialState = () => ({
         searchTerm: '',
         results: []
-    });
+    })
     state = MovieSearch.intialState();
+
+    componentDidMount() {
+        this.setState({
+            searchTerm: localStorage.getItem('searchTerm') !== null ? localStorage.getItem('searchTerm') : '',
+            results: localStorage.getItem('results') !== null ? JSON.parse(localStorage.getItem('results')) : []
+        });
+    }
 
     searchChange = (e) => this.setState({ searchTerm: e.target.value })
     clear = () => this.setState(MovieSearch.intialState());
@@ -17,10 +24,12 @@ class MovieSearch extends React.Component {
         fetch(`http://omdbapi.com/?s=${this.state.searchTerm}&apikey=${process.env.OMDB_API_KEY}`)
         .then(res => {
             res.json().then(data => {
+                localStorage.setItem('searchTerm', this.state.searchTerm);
+                localStorage.setItem('results', JSON.stringify(data.Search));
                 this.setState({ searchTerm: '', results: data.Search });
             });
         }).catch(err => {
-            this.setState({ searcTerm: '', results: [] });
+            this.setState({ searchTerm: '', results: [] });
         });
     }
 
