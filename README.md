@@ -1,7 +1,7 @@
 # React OMDB Movie Search App
 
-![Search View](/images/movie_1.png)
-![Details View](/images/movie_2.png)
+![Search View](./images/movie_1.png)
+![Details View](./images/movie_2.png)
 
 I created a few versions of this app during my time at [General Assembly Seattle](https://generalassemb.ly/) and recently decided to create a React version using Babel, Webpack, and some new features of ES2017. It's a simple app that allows users to search the OMDB movie database using keywords in the titles. Each successful query returns 10 results. Users can then click on a result card to see more information on a particular film. Hope you enjoy!
 
