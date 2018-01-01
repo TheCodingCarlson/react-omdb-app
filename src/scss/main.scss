@@ -6,6 +6,9 @@ $red: #b71c1c;
 
 $spacing-size-1: 12px;
 $spacing-size-2: 24px;
+$icon-size: 60px;
+
+$hover-transition: color 0.5s ease;
 
 $carrois-gothic: 'Carrois Gothic SC', sans-serif;
 $didact-gothic: 'Didact Gothic', sans-serif;
@@ -48,7 +51,7 @@ input:not([type]) {
     }
 }
 
-button {
+.btn {
     margin-left: $spacing-size-1;
 }
 
@@ -63,11 +66,37 @@ button {
     }
 }
 
-.back-link {
+.red-link {
     color: $red;
-    transition: color 0.5s ease;
+    transition: $hover-transition;
 
     &:hover {
         color: $white;
+    }
+}
+
+.devicon {
+    color: $white;
+    font-size: $icon-size;
+    transition: $hover-transition;
+
+    &:hover {
+        color: $red;
+    }
+}
+
+.icon-list {
+    li {
+        padding: $spacing-size-1 0 $spacing-size-1 0;
+    }
+}
+
+@media only screen and (min-device-width: 540px) {
+    .icon-list {
+        li {
+            display: inline-block;
+            padding: 0;
+            margin-left: $spacing-size-2;
+        }
     }
 }

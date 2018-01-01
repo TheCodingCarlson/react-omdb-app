@@ -27,7 +27,7 @@ input:not([type]) {
     border-bottom: 1px solid #b71c1c !important;
     box-shadow: 0 1px 0 0 #b71c1c !important; }
 
-button {
+.btn {
   margin-left: 12px; }
 
 .card-action {
@@ -37,8 +37,24 @@ button {
   background-color: rgba(255, 255, 255, 0.25);
   color: #ffffff; }
 
-.back-link {
+.red-link {
   color: #b71c1c;
   transition: color 0.5s ease; }
-  .back-link:hover {
+  .red-link:hover {
     color: #ffffff; }
+
+.devicon {
+  color: #ffffff;
+  font-size: 60px;
+  transition: color 0.5s ease; }
+  .devicon:hover {
+    color: #b71c1c; }
+
+.icon-list li {
+  padding: 12px 0 12px 0; }
+
+@media only screen and (min-device-width: 540px) {
+  .icon-list li {
+    display: inline-block;
+    padding: 0;
+    margin-left: 24px; } }

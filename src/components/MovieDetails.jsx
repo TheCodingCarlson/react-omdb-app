@@ -71,7 +71,7 @@ class MovieDetails extends React.Component {
                 </div>
                 <div className='row'>
                     <div className='s12'>
-                        <Link to='/' className='back-link'>&larr; Back</Link>
+                        <Link to='/' className='red-link'>&larr; Back</Link>
                     </div>
                 </div>
             </div>
