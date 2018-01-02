@@ -6,7 +6,8 @@ $red: #b71c1c;
 
 $spacing-size-1: 12px;
 $spacing-size-2: 24px;
-$icon-size: 60px;
+$icon-size: 70px;
+$sub-heading-font-size: 20px;
 
 $hover-transition: color 0.5s ease;
 
@@ -39,6 +40,10 @@ p {
 
 h1 {
     font-family: $carrois-gothic;
+}
+
+.sub-heading {
+    font-size: $sub-heading-font-size;
 }
 
 input:not([type]) {

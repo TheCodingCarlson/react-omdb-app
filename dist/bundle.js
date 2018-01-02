@@ -23471,7 +23471,7 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'p',
-                        null,
+                        { className: 'sub-heading' },
                         'Search the OMDB movie database for details on a specific movie or enter a general term to discover movies with that query in the title.'
                     )
                 )
@@ -23761,7 +23761,7 @@ const IconLink = props => {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'a',
             { href: props.url },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'devicon ' + props.iconClass })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: `devicon devicon-${props.iconClass}` })
         )
     );
 };
@@ -23820,13 +23820,13 @@ class About extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'ul',
                         { className: 'icon-list' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://www.javascript.com/', iconClass: 'devicon-javascript-plain' }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://reactjs.org/', iconClass: 'devicon-react-plain-wordmark' }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'http://sass-lang.com/', iconClass: 'devicon-sass-original' }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://babeljs.io/', iconClass: 'devicon-babel-plain' }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://webpack.js.org/', iconClass: 'devicon-webpack-plain-wordmark' }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://nodejs.org/', iconClass: 'devicon-nodejs-plain-wordmark' }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://expressjs.com/', iconClass: 'devicon-express-original-wordmark' })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://www.javascript.com/', iconClass: 'javascript-plain' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://reactjs.org/', iconClass: 'react-plain-wordmark' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'http://sass-lang.com/', iconClass: 'sass-original' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://babeljs.io/', iconClass: 'babel-plain' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://webpack.js.org/', iconClass: 'webpack-plain-wordmark' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://nodejs.org/', iconClass: 'nodejs-plain-wordmark' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://expressjs.com/', iconClass: 'express-original-wordmark' })
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

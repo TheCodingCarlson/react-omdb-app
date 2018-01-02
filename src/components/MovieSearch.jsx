@@ -79,7 +79,7 @@ class MovieSearch extends React.Component {
                 <div className='row'>
                     <div className='col s12 center-align'>
                         <h1>OMDB Movie Search</h1>
-                        <p>Search the OMDB movie database for details on a specific movie or enter a general term to discover movies with that query in the title.</p>
+                        <p className='sub-heading'>Search the OMDB movie database for details on a specific movie or enter a general term to discover movies with that query in the title.</p>
                     </div>
                 </div>
                 <div className='row center-align'>

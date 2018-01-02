@@ -20,6 +20,9 @@ p {
 h1 {
   font-family: "Carrois Gothic SC", sans-serif; }
 
+.sub-heading {
+  font-size: 20px; }
+
 input:not([type]) {
   border-bottom: 1px solid #ffffff;
   color: #ffffff; }
@@ -45,7 +48,7 @@ input:not([type]) {
 
 .devicon {
   color: #ffffff;
-  font-size: 60px;
+  font-size: 70px;
   transition: color 0.5s ease; }
   .devicon:hover {
     color: #b71c1c; }

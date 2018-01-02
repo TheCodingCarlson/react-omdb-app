@@ -5,7 +5,7 @@ const IconLink = (props) => {
     return (
         <li>
             <a href={props.url}>
-                <i className={'devicon '+ props.iconClass}></i>
+                <i className={`devicon devicon-${props.iconClass}`}></i>
             </a>
         </li>
     );
@@ -26,13 +26,13 @@ class About extends React.Component {
                         <p>Source code can be found <a href='https://github.com/TheCodingCarlson/react-omdb-app' className='red-link'>here</a></p>
                         <p>Technologies used in this app include:</p>
                         <ul className='icon-list'>
-                            <IconLink url='https://www.javascript.com/' iconClass='devicon-javascript-plain' />
-                            <IconLink url='https://reactjs.org/' iconClass='devicon-react-plain-wordmark' />
-                            <IconLink url='http://sass-lang.com/' iconClass='devicon-sass-original' />
-                            <IconLink url ='https://babeljs.io/' iconClass='devicon-babel-plain' />
-                            <IconLink url ='https://webpack.js.org/' iconClass='devicon-webpack-plain-wordmark' />
-                            <IconLink url ='https://nodejs.org/' iconClass='devicon-nodejs-plain-wordmark' />
-                            <IconLink url ='https://expressjs.com/' iconClass='devicon-express-original-wordmark' />
+                            <IconLink url='https://www.javascript.com/' iconClass='javascript-plain' />
+                            <IconLink url='https://reactjs.org/' iconClass='react-plain-wordmark' />
+                            <IconLink url='http://sass-lang.com/' iconClass='sass-original' />
+                            <IconLink url ='https://babeljs.io/' iconClass='babel-plain' />
+                            <IconLink url ='https://webpack.js.org/' iconClass='webpack-plain-wordmark' />
+                            <IconLink url ='https://nodejs.org/' iconClass='nodejs-plain-wordmark' />
+                            <IconLink url ='https://expressjs.com/' iconClass='express-original-wordmark' />
                         </ul>
                     </div>
                     <Link to='/' className='red-link'>&larr; Back</Link>
