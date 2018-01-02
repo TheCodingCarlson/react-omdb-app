@@ -1,6 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+const LoadingMessage = () => {
+    return (
+        <div className='row'>
+            <div className='col s12'>
+                <h1>...Loading</h1>
+            </div>
+        </div>
+    );
+}
+
 class MovieDetails extends React.Component {
     static initialState = () => ({
         movie: null
@@ -8,7 +18,7 @@ class MovieDetails extends React.Component {
     state = MovieDetails.initialState();
 
     componentDidMount() {
-        fetch(`http://omdbapi.com/?i=${this.props.match.params.id}&apikey=${process.env.OMDB_API_KEY}`)
+        fetch(`https://omdbapi.com/?i=${this.props.match.params.id}&apikey=${process.env.OMDB_API_KEY}`)
         .then(res => {
             res.json()
             .then(data => {
@@ -21,7 +31,7 @@ class MovieDetails extends React.Component {
 
     render() {
         const movie = this.state.movie;
-        if(!movie) return <h1>...Loading</h1>;
+        if(!movie) return <LoadingMessage />;
         const scores = this.state.movie.Ratings.map((score, id) => {
             return (
                 <li className='collection-item' key={id}>

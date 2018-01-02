@@ -23431,7 +23431,7 @@ class MovieSearch extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
         }, this.search = e => {
             e.preventDefault();
 
-            fetch(`http://omdbapi.com/?s=${this.state.searchTerm}&apikey=${"c555a4b5"}`).then(res => {
+            fetch(`https://omdbapi.com/?s=${this.state.searchTerm}&apikey=${"c555a4b5"}`).then(res => {
                 res.json().then(data => {
                     localStorage.setItem('searchTerm', this.state.searchTerm);
                     localStorage.setItem('results', JSON.stringify(data.Search));
@@ -23547,6 +23547,22 @@ MovieSearch.intialState = () => ({
 
 
 
+const LoadingMessage = () => {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'row' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col s12' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'h1',
+                null,
+                '...Loading'
+            )
+        )
+    );
+};
+
 class MovieDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     constructor(...args) {
         var _temp;
@@ -23555,7 +23571,7 @@ class MovieDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
     }
 
     componentDidMount() {
-        fetch(`http://omdbapi.com/?i=${this.props.match.params.id}&apikey=${"c555a4b5"}`).then(res => {
+        fetch(`https://omdbapi.com/?i=${this.props.match.params.id}&apikey=${"c555a4b5"}`).then(res => {
             res.json().then(data => {
                 this.setState({ movie: data });
             });
@@ -23566,11 +23582,7 @@ class MovieDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
 
     render() {
         const movie = this.state.movie;
-        if (!movie) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h1',
-            null,
-            '...Loading'
-        );
+        if (!movie) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoadingMessage, null);
         const scores = this.state.movie.Ratings.map((score, id) => {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'li',
@@ -23805,7 +23817,7 @@ class About extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'http://sass-lang.com/', iconClass: 'devicon-sass-original' }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://babeljs.io/', iconClass: 'devicon-babel-plain' }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://webpack.js.org/', iconClass: 'devicon-webpack-plain-wordmark' }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://nodejs.org/en/', iconClass: 'devicon-nodejs-plain-wordmark' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://nodejs.org/', iconClass: 'devicon-nodejs-plain-wordmark' }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(IconLink, { url: 'https://expressjs.com/', iconClass: 'devicon-express-original-wordmark' })
                     )
                 ),

@@ -52,7 +52,7 @@ class MovieSearch extends React.Component {
     search = (e) => {
         e.preventDefault();
 
-        fetch(`http://omdbapi.com/?s=${this.state.searchTerm}&apikey=${process.env.OMDB_API_KEY}`)
+        fetch(`https://omdbapi.com/?s=${this.state.searchTerm}&apikey=${process.env.OMDB_API_KEY}`)
         .then(res => {
             res.json().then(data => {
                 localStorage.setItem('searchTerm', this.state.searchTerm);
