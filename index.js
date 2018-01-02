@@ -7,4 +7,4 @@ app.get('*', (req, res) => {
     res.sendFile(__dirname + '/dist/index.html');
 });
 
-app.listen(3000, () => console.log('out in the ether, listening to the aliens...'));
+app.listen(process.env.PORT || 3000, () => console.log('out in the ether, listening to the aliens...'));
