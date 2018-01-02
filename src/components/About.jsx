@@ -31,7 +31,7 @@ class About extends React.Component {
                             <IconLink url='http://sass-lang.com/' iconClass='devicon-sass-original' />
                             <IconLink url ='https://babeljs.io/' iconClass='devicon-babel-plain' />
                             <IconLink url ='https://webpack.js.org/' iconClass='devicon-webpack-plain-wordmark' />
-                            <IconLink url ='https://nodejs.org/en/' iconClass='devicon-nodejs-plain-wordmark' />
+                            <IconLink url ='https://nodejs.org/' iconClass='devicon-nodejs-plain-wordmark' />
                             <IconLink url ='https://expressjs.com/' iconClass='devicon-express-original-wordmark' />
                         </ul>
                     </div>

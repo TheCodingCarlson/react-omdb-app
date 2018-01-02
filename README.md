@@ -9,13 +9,13 @@ I created a few adaptations of this app during my time at [General Assembly Seat
 
 Technologies Used:
 
-* React
-* Babel (ES2017)
-* Webpack
-* Sass
-* Materialize
-* Node
-* Express
-* OMDB API
-* Emoji CSS Icons
-* Devicons
+* [React](https://reactjs.org/)
+* [Babel (ES2017)](https://babeljs.io/)
+* [Webpack](https://webpack.js.org/)
+* [Sass](http://sass-lang.com/)
+* [Materialize](http://materializecss.com/)
+* [Node](https://nodejs.org/)
+* [Express](https://expressjs.com/)
+* [OMDB API](http://www.omdbapi.com/)
+* [Emoji CSS Icons](https://afeld.github.io/emoji-css/)
+* [Devicons](http://konpa.github.io/devicon/)
