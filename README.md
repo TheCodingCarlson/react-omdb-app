@@ -7,7 +7,7 @@ I created a few adaptations of this app during my time at [General Assembly Seat
 
 You can find the deployed app [here](https://react-omdb-movie-search.herokuapp.com/).
 
-Technologies Used:
+Tech Used:
 
 * [React](https://reactjs.org/)
 * [Babel (ES2017)](https://babeljs.io/)
