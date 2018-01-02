@@ -23598,6 +23598,14 @@ class MovieDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
             );
         });
 
+        const poster = this.state.movie.Poster !== 'N/A' ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: this.state.movie.Poster, alt: this.state.movie.Poster }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h4',
+            null,
+            'There is no poster available for this film'
+        );
+
+        const plot = this.state.movie.Plot !== 'N/A' ? this.state.movie.Plot : '';
+
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             null,
@@ -23615,7 +23623,7 @@ class MovieDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'p',
                         null,
-                        movie.Plot
+                        plot
                     )
                 )
             ),
@@ -23625,7 +23633,7 @@ class MovieDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'col s12 m6 center-align' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: movie.Poster, alt: movie.Title })
+                    poster
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',

@@ -40,17 +40,23 @@ class MovieDetails extends React.Component {
             )
         });
 
+        const poster = this.state.movie.Poster !== 'N/A' ? 
+            <img src={this.state.movie.Poster} alt={this.state.movie.Poster} /> :
+            <h4>There is no poster available for this film</h4>
+
+        const plot = this.state.movie.Plot !== 'N/A' ? this.state.movie.Plot : '';
+
         return(
             <div>
                 <div className='row'>
                     <div className='col s12'>
                         <h1>{movie.Title}</h1>
-                        <p>{movie.Plot}</p>  
+                        <p>{plot}</p>  
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col s12 m6 center-align'>
-                        <img src={movie.Poster} alt={movie.Title} />
+                        {poster}
                     </div>
                     <div className='col s12 m6'>
                         <ul className='collection'>
