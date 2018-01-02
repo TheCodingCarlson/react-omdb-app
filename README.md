@@ -5,7 +5,7 @@
 
 I created a few adaptations of this app during my time at [General Assembly Seattle](https://generalassemb.ly/) and recently decided to create a React version using Babel, Webpack, and some new features of ES2017. It's a simple app that allows users to search the OMDB movie database using keywords. Each successful query returns 10 results. Users can then click on a result card to see more information on a particular film. Hope you enjoy!
 
-<!-- [DEMO]() -->
+You can find the deployed app [here](https://react-omdb-movie-search.herokuapp.com/).
 
 Technologies Used:
 
