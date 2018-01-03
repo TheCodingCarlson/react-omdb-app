@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LoadingMessage = () => {
     return (
@@ -15,6 +15,7 @@ class MovieDetails extends React.Component {
     static initialState = () => ({
         movie: null
     })
+
     state = MovieDetails.initialState();
 
     componentDidMount() {
@@ -22,10 +23,10 @@ class MovieDetails extends React.Component {
         .then(res => {
             res.json()
             .then(data => {
-                this.setState({ movie: data })
+                this.setState({ movie: data });
             })
         }).catch(err => {
-            this.setState({ movie: null })
+            this.setState({ movie: null });
         })
     }
 
@@ -37,12 +38,12 @@ class MovieDetails extends React.Component {
                 <li className='collection-item' key={id}>
                     <span className='red-text'>{score.Source}:</span> {score.Value}
                 </li>
-            )
-        });
+            );
+        })
 
         const poster = this.state.movie.Poster !== 'N/A' ? 
             <img src={this.state.movie.Poster} alt={this.state.movie.Poster} /> :
-            <h4>There is no poster available for this film</h4>
+            <h4>There is no poster available for this film</h4>;
 
         const plot = this.state.movie.Plot !== 'N/A' ? this.state.movie.Plot : '';
 
@@ -91,8 +92,8 @@ class MovieDetails extends React.Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default MovieDetails
+export default MovieDetails;

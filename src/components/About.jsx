@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const IconLink = (props) => {
     return (
@@ -42,4 +42,4 @@ class About extends React.Component {
     }
 }
 
-export default About
+export default About;

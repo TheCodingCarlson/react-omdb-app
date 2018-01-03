@@ -1,14 +1,14 @@
 // React Dependencies
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 // React Router
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 // Components
-import MovieSearch from './components/MovieSearch.jsx'
-import MovieDetails from './components/MovieDetails.jsx'
-import About from './components/About.jsx'
+import MovieSearch from './components/MovieSearch.jsx';
+import MovieDetails from './components/MovieDetails.jsx';
+import About from './components/About.jsx';
 
 class App extends React.Component {
     render() {
@@ -20,7 +20,7 @@ class App extends React.Component {
                     <Route path='/results/:id' component={MovieDetails} />
                 </div>
             </Router>
-        )
+        );
     }
 }
 

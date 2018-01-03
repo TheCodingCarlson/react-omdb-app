@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MovieCard = (props) => {
     return (
@@ -32,6 +32,7 @@ class MovieSearch extends React.Component {
         searchTerm: '',
         results: []
     })
+    
     state = MovieSearch.intialState();
 
     componentDidMount() {
@@ -61,7 +62,7 @@ class MovieSearch extends React.Component {
             });
         }).catch(err => {
             this.setState({ searchTerm: '', results: [] });
-        });
+        })
     }
 
     render() {  
@@ -108,4 +109,4 @@ class MovieSearch extends React.Component {
     }
 }
 
-export default MovieSearch
+export default MovieSearch;
